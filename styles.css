@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(20, 9, 174);
+    color: beige;
+    height: 100vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    overflow: hidden;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr 0.3fr;
+    grid-template-rows: 1fr 1.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Letter Card Next"
+        "Timer Card ."
+        "Timer Card .";
+}
+
+#Letter {
+    display: flex;
+    grid-area: Letter;
+    border: 0.1em solid black;
+    border-radius: 10%;
+    font-size: 8em;
+    height: 75%;
+    width: 50%;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#Card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-area: Card;
+    border: 0.2em solid black;
+    border-radius: 10%;
+    text-align: left;
+    font-size: 1.6em;
+    overflow-wrap: normal;
+}
+
+.Next {
+    display: flex;
+    justify-content: center;
+    grid-area: Next;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#topics {
+    display: none;
+    width: 90%;
+    height: 90%;
+    display: none;
+    font-size: 1.5em;
+}
+
+#countdown {
+    font-size: 5em;
+    display: block;
+}
+
+#next-button {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+img {
+    max-height: 12em;
+}
+
+button {
+    cursor: pointer;
+}
