@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Uncommon</title>
         <link rel="stylesheet" type="text/css" href="styles.css" defer />
-        <link rel="stylesheet" href="hourglass.css" defer />
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="scripts.js" defer></script>
     </head>
@@ -17,7 +16,9 @@
                 <ol id="topics"></ol>
                 <div id="countdown">3</div>
             </div>
-            <div class="hourglass"></div>
+            <div class="timer">
+                <p id="display-time">60</p>
+            </div>
             <div class="Next">
                 <button type="button" id="next-button">
                     <img

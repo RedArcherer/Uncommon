@@ -165,18 +165,36 @@ const letter = document.getElementById("Letter");
 const card = document.getElementById("Card");
 const countdown = document.getElementById("countdown");
 const topics = document.getElementById("topics");
-const hourglass = document.getElementsByClassName("hourglass");
 const countdown_audio_normal = new Audio("beep-07a.mp3");
 const countdown_audio_last = new Audio("beep-04.mp3");
+const timer_end_audio = new Audio("timer-end.mp3");
+const timer = document.getElementById("display-time");
 
 button.addEventListener("click", beginRound);
 
 async function beginRound() {
+    remaining_time = 8;
+    if (remaining_time < 8) {
+        remaining_time = 8;
+    }
+
+    function timer_countdown() {
+        setInterval(() => {
+            remaining_time--;
+            timer.innerHTML = remaining_time;
+
+            if (remaining_time <= 0) {
+                timer_end_audio.play();
+                clearInterval(timer_countdown);
+            }
+        }, 1000);
+    }
+
+    clearTimeout(timer_countdown);
     topics.innerHTML = "";
     let round_card = cards[Math.floor(Math.random() * cards.length)];
     await showRandomLetters();
     await countdown_func(show_topics); //function must be passed as an argument because setInterval() has to run it, await/async does not work for setInterval()
-    hourglass.style
 
     async function countdown_func(topics_func) {
         topics.style.display = "none";
@@ -219,10 +237,10 @@ async function beginRound() {
         }
         await showing();
         console.log("Completed showRandomLetters");
-        return "Complete";
     }
 
     async function show_topics() {
+        //Create list in card and show topics
         countdown.style.display = "none";
         for (let topic of round_card) {
             let list_item = document.createElement("li");
@@ -230,6 +248,7 @@ async function beginRound() {
             topics.appendChild(list_item);
         }
         topics.style.display = "block";
-        //Create list in card and show topics
+
+        timer_countdown();
     }
 }

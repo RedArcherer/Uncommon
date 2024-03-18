@@ -5,7 +5,6 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 10%;
-    overflow: hidden;
 }
 
 #container {
@@ -15,8 +14,8 @@ body {
     gap: 0px 0px;
     grid-template-areas:
         "Letter Card Next"
-        "Timer Card ."
-        "Timer Card .";
+        "timer Card ."
+        "timer Card .";
 }
 
 #Letter {
@@ -73,6 +72,26 @@ body {
     width: 100%;
     background-color: transparent;
     border: none;
+}
+
+.timer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5em;
+    line-height: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border: 5px solid black;
+}
+
+#stopwatch {
+    border: 2px solid black;
 }
 
 img {
