@@ -173,9 +173,9 @@ const timer = document.getElementById("display-time");
 button.addEventListener("click", beginRound);
 
 async function beginRound() {
-    remaining_time = 8;
-    if (remaining_time < 8) {
-        remaining_time = 8;
+    remaining_time = 60;
+    if (remaining_time < 60) {
+        remaining_time = 60;
     }
 
     function timer_countdown() {
