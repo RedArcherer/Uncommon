@@ -9,13 +9,13 @@ body {
 
 #container {
     display: grid;
-    grid-template-columns: 0.9fr 1.2fr 0.3fr;
+    grid-template-columns: 0.9fr 1fr 0.5fr;
     grid-template-rows: 1fr 1.5fr 0.5fr;
     gap: 0px 0px;
     grid-template-areas:
         "Letter Card Next"
-        "timer Card ."
-        "timer Card .";
+        "timer Card score"
+        "timer Card score";
 }
 
 #Letter {
@@ -87,11 +87,26 @@ body {
     -moz-border-radius: 5px;
     -o-border-radius: 5px;
     -ms-border-radius: 5px;
-    border: 5px solid black;
 }
 
 #stopwatch {
     border: 2px solid black;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#scoring {
+    height: 100%;
+    background-color: transparent;
+    border: 0.25em solid black;
+    border-radius: 5%;
+    user-select: none;
+    color: beige;
 }
 
 img {
@@ -100,4 +115,8 @@ img {
 
 button {
     cursor: pointer;
+}
+
+h2 {
+    font-size: 1.3em;
 }
