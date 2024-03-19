@@ -173,24 +173,6 @@ const timer = document.getElementById("display-time");
 button.addEventListener("click", beginRound);
 
 async function beginRound() {
-    remaining_time = 60;
-    if (remaining_time < 60) {
-        remaining_time = 60;
-    }
-
-    function timer_countdown() {
-        setInterval(() => {
-            remaining_time--;
-            timer.innerHTML = remaining_time;
-
-            if (remaining_time <= 0) {
-                timer_end_audio.play();
-                clearInterval(timer_countdown);
-            }
-        }, 1000);
-    }
-
-    clearTimeout(timer_countdown);
     topics.innerHTML = "";
     let round_card = cards[Math.floor(Math.random() * cards.length)];
     await showRandomLetters();
@@ -249,6 +231,16 @@ async function beginRound() {
         }
         topics.style.display = "block";
 
-        timer_countdown();
+        remaining_time = 8;
+
+        const timer_countdown = setInterval(() => {
+            remaining_time--;
+            timer.innerHTML = remaining_time;
+
+            if (remaining_time <= 0) {
+                timer_end_audio.play();
+                clearInterval(timer_countdown);
+            }
+        }, 1000);
     }
 }
