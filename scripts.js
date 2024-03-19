@@ -231,7 +231,7 @@ async function beginRound() {
         }
         topics.style.display = "block";
 
-        remaining_time = 8;
+        remaining_time = 60;
 
         const timer_countdown = setInterval(() => {
             remaining_time--;
